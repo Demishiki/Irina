@@ -1,0 +1,13 @@
+Создать новую базу данных
+
+CREATE DATABASE testBase;
+
+Сщздать таблицу  Customer
+
+CREATE TABLE Customer;
+
+Вывести все значения из таблицы Customer
+
+SELECT * FROM Customer;
+
+

@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "3c333502-a07a-4817-88ef-53ac4899ff4d",
+		"name": "tastBasepost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createcompany",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"company_name\": \"Bugnet\",\r\n  \"company_type\": \"ООО\",\r\n  \"company_users\": [\"mishina20061@rambler.ru\"],\r\n  \"email_owner\": \"aa+1@mail.com\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/createcompany",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createcompany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "doRegister",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mishina2061@rambler.ru",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Rina",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/doregister",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"can@mail.com\",\r\n  \"name\": \"Ночной хомяк\",\r\n  \"tasks\": [12],\r\n  \"companies\": [25],\r\n  \"hobby\":\"Делать домашку по ночам\",\r\n  \"adres\":\"ночная кухня\",\r\n  \"name1\":\"Тестовый, домашка\",\r\n  \"surname1\":\"Гном\",\r\n  \"fathername1\":\"Ночной\",\r\n  \"cat\":\"Смурфик\",\r\n  \"dog\":\"Кусака\",\r\n  \"parrot\":\"Васёк\",\r\n  \"cavy\":\"Кто?\",\r\n  \"hamster\":\"Ночной хомяк\",\r\n  \"squirrel\":\"Ночные хомяки\",\r\n  \"phone\":\"333 33 33\",\r\n  \"inn\":\"123456789012\",\r\n  \"gender\":\"m\",\r\n  \"birthday\":\"01.01.1900\",\r\n  \"date_start\":\"11.11.2000\"\r\n} "
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/createuser",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUserWithTasks",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"email\": \"canon@mail.com\",\r\n \"name\": \"Alex17\",\r\n \"tasks\": [{\r\n   \"title\": \"Запрос\",\r\n   \"description\": \"Запрос\"\r\n  },\r\n  {\r\n   \"title\": \"Второй запрос\",\r\n   \"description\": \"Второй запрос\"\r\n  }\r\n ],\r\n \"companies\": [25],\r\n \"hobby\":\"по ночам делать домашку\",\r\n  \"adres\":\"адрес 1\",\r\n  \"name1\":\"Тестовый, ночной\",\r\n  \"surname1\":\"Петр\",\r\n  \"fathername1\":\"Петров\",\r\n  \"cat\":\"Маруся\",\r\n  \"dog\":\"Кусака\",\r\n  \"parrot\":\"Васька\",\r\n  \"cavy\":\"Кто?\",\r\n  \"hamster\":\"Ночной_хомяк\",\r\n  \"squirrel\":\"Веселуха\",\r\n  \"phone\":\"333 33 33\",\r\n  \"inn\":\"123456789012\",\r\n  \"gender\":\"m\",\r\n  \"birthday\":\"01.01.1900\",\r\n  \"date_start\":\"11.11.2000\"\r\n}"
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/createuserwithtasks",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"createuserwithtasks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
