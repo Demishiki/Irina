@@ -1,13 +1,42 @@
-Создать новую базу данных
+CREATE DATABASE `aviatravel` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-CREATE DATABASE testBase;
+CREATE TABLE `авиакомпания` (
+  `id` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `adress` varchar(45) NOT NULL,
+  `telephone` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-Сщздать таблицу  Customer
+CREATE TABLE `город` (
+  `id` int NOT NULL,
+  `name` varchar(45) NOT NULL,
+  `shortname` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-CREATE TABLE Customer;
+CREATE TABLE `аэропорт` (
+  `id` int NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `short_name` varchar(45) DEFAULT NULL,
+  `city_id` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `city_id_fk_idx` (`city_id`),
+  CONSTRAINT `city_id_fk` FOREIGN KEY (`city_id`) REFERENCES `город` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-Вывести все значения из таблицы Customer
 
-SELECT * FROM Customer;
+CREATE TABLE `рейс` (
+  `id` int NOT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `аэропорт_вылета` int NOT NULL,
+  `аэропорт_прилёта` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `аэропорт_вылета_idx` (`аэропорт_вылета`),
+  KEY `аэропорт_прилёта_fk_idx` (`аэропорт_прилёта`),
+  CONSTRAINT `аэропорт_вылета_fk` FOREIGN KEY (`аэропорт_вылета`) REFERENCES `аэропорт` (`id`),
+  CONSTRAINT `аэропорт_прилёта_fk` FOREIGN KEY (`аэропорт_прилёта`) REFERENCES `аэропорт` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 
