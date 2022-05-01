@@ -1,0 +1,57 @@
+Swagger
+
+→ PetPost
+  POST https://petstore.swagger.io/v2/pet [200 OK, 595B, 602ms]
+  1. Response time is less than 200ms
+  √  Successful POST request
+  √  Status code name has string
+
+→ PetGet
+  GET https://petstore.swagger.io/v2/pet/7799 [200 OK, 595B, 126ms]
+  2. Body is correct
+  √  Response time is less than 200ms
+
+→ PutPet
+  PUT https://petstore.swagger.io/v2/pet [200 OK, 481B, 125ms]
+  √  Check response
+  √  Status code is 200
+  √  Response time is less than 200ms
+
+→ DeletePet
+  DELETE https://petstore.swagger.io/v2/pet/779 [200 OK, 371B, 124ms]
+  √  Successful DELETE response
+  √  Response time is less than 200ms
+  √  Body matches string
+
+┌─────────────────────────┬─────────────────────┬────────────────────┐
+│                         │            executed │             failed │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              iterations │                   1 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│                requests │                   4 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│            test-scripts │                   4 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│      prerequest-scripts │                   0 │                  0 │
+├─────────────────────────┼─────────────────────┼────────────────────┤
+│              assertions │                  11 │                  2 │
+├─────────────────────────┴─────────────────────┴────────────────────┤
+│ total run duration: 1333ms                                         │
+├────────────────────────────────────────────────────────────────────┤
+│ total data received: 738B (approx)                                 │
+├────────────────────────────────────────────────────────────────────┤
+│ average response time: 244ms [min: 124ms, max: 602ms, s.d.: 206ms] │
+└────────────────────────────────────────────────────────────────────┘
+
+  #  failure                detail
+
+ 1.  AssertionError         Response time is less than 200ms
+                            expected 602 to be below 200
+                            at assertion:0 in test-script
+                            inside "PetPost"
+
+ 2.  AssertionError         Body is correct
+                            expected response body json to equal { Object (id, category, ...) } but got { Object
+                            (id, category, ...) }
+                            at assertion:0 in test-script
+                            inside "PetGet"
